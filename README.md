@@ -83,7 +83,7 @@ All values are percentages except Cohen's κ, which is displayed on the same 0-1
 Thirty-second EEG epochs are divided into non-overlapping five-second sub-epochs. Preceding, central, and succeeding sub-epochs form contextual model inputs.
 
 <p align="center">
-  <img src="Figs/Fig2.png" width="92%" alt="EEG preprocessing and contextual sub-epoch windowing">
+  <img src="figures/Fig2.png" width="92%" alt="EEG preprocessing and contextual sub-epoch windowing">
 </p>
 
 ### Multi-scale encoding and temporal compression
@@ -91,7 +91,7 @@ Thirty-second EEG epochs are divided into non-overlapping five-second sub-epochs
 Parallel depthwise temporal convolutions learn complementary short-, medium-, and long-range EEG patterns. Their outputs are concatenated and progressively compressed by residual dilated blocks, producing a compact representation for sequence modeling.
 
 <p align="center">
-  <img src="Figs/Fig3.png" width="95%" alt="Multi-scale CNN temporal feature extraction and compression">
+  <img src="figures/Fig3.png" width="95%" alt="Multi-scale CNN temporal feature extraction and compression">
 </p>
 
 ### Hierarchical sequence learning
@@ -99,7 +99,7 @@ Parallel depthwise temporal convolutions learn complementary short-, medium-, an
 An intra-window BiLSTM captures short-term dynamics within each compressed sub-epoch representation. An inter-window BiLSTM then models contextual dependencies among neighboring windows before classification.
 
 <p align="center">
-  <img src="Figs/Fig4.png" width="95%" alt="Hierarchical temporal sequence modeling">
+  <img src="figures/Fig4.png" width="95%" alt="Hierarchical temporal sequence modeling">
 </p>
 
 > **Implementation traceability:** the manuscript diagram includes additive attention. The archived notebook implementation used for the released checkpoint returns the final inter-window BiLSTM state and does not invoke its separately defined attention module. The code preserves that behavior instead of silently changing the trained architecture. See [`IMPLEMENTATION_AUDIT.md`](IMPLEMENTATION_AUDIT.md) for the full notebook-to-package audit.
@@ -118,7 +118,7 @@ The SleepEDF-20 ablation results show the incremental contribution of temporal c
 ## Training behavior and qualitative analysis
 
 <p align="center">
-  <img src="Figs/fig5-NEW.png" width="96%" alt="Five-fold cross-validation learning curves">
+  <img src="figures/fig5-NEW.png" width="96%" alt="Five-fold cross-validation learning curves">
 </p>
 
 <p align="center"><em>Mean training and validation accuracy across five folds; shaded regions denote ±1 standard deviation.</em></p>
@@ -133,14 +133,14 @@ The SleepEDF-20 ablation results show the incremental contribution of temporal c
 <details>
 <summary><strong>Physiological segment-importance analysis</strong></summary>
 <br>
-<p align="center"><img src="Figs/Fig8_New.png" width="96%" alt="EEG segment importance across sleep stages"></p>
+<p align="center"><img src="figures/Fig8_New.png" width="96%" alt="EEG segment importance across sleep stages"></p>
 <p align="center"><em>Representative segment importance across stages, highlighting alpha, theta, spindle, K-complex, delta, and sawtooth activity.</em></p>
 </details>
 
 <details>
 <summary><strong>Prediction calibration</strong></summary>
 <br>
-<table><tr><td><img src="Figs/Fig9.png" alt="Overall reliability diagram"></td><td><img src="Figs/Fig10.png" alt="N1 reliability diagram"></td></tr></table>
+<table><tr><td><img src="figures/Fig9.png" alt="Overall reliability diagram"></td><td><img src="figures/Fig10.png" alt="N1 reliability diagram"></td></tr></table>
 <p align="center"><em>Reliability diagrams for overall predictions and the N1 class. The manuscript reports an overall expected calibration error of 0.010.</em></p>
 </details>
 
