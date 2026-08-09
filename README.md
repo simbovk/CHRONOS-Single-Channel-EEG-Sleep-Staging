@@ -27,7 +27,7 @@ CHRONOS is a context-aware framework for automatic sleep staging from a **single
 The repository provides the modular PyTorch implementation used to reproduce the core experimental workflow: memory-efficient data loading, leakage-safe grouped cross-validation, training, checkpointing, block-level evaluation, and paper-aligned metrics.
 
 <p align="center">
-  <img src="figures/Fig1.png" width="95%" alt="Overview of the CHRONOS sleep-staging framework">
+  <img src="figures/Fig1.jpg" width="95%" alt="Overview of the CHRONOS sleep-staging framework">
 </p>
 
 <p align="center"><em>Overview of CHRONOS: context construction, multi-scale temporal encoding, temporal compression, hierarchical sequence modeling, classification, and block-level aggregation.</em></p>
@@ -71,7 +71,7 @@ All values are percentages except Cohen's κ, which is displayed on the same 0-1
 |  | REM | 85.00 | 85.00 | 88.00 | 96.00 | 98.72 |
 
 <p align="center">
-  <img src="Figs/Fig6_New.pdf" width="92%" alt="Normalized confusion matrices for SleepEDF-20 and SleepEDF-78">
+  <img src="Figs/Fig6_New.jpg" width="92%" alt="Normalized confusion matrices for SleepEDF-20 and SleepEDF-78">
 </p>
 
 <p align="center"><em>Normalized confusion matrices. Most errors involve physiologically adjacent stages, with N1 remaining the most difficult class.</em></p>
@@ -83,7 +83,7 @@ All values are percentages except Cohen's κ, which is displayed on the same 0-1
 Thirty-second EEG epochs are divided into non-overlapping five-second sub-epochs. Preceding, central, and succeeding sub-epochs form contextual model inputs.
 
 <p align="center">
-  <img src="Figs/Fig2.pdf" width="92%" alt="EEG preprocessing and contextual sub-epoch windowing">
+  <img src="Figs/Fig2.jpg" width="92%" alt="EEG preprocessing and contextual sub-epoch windowing">
 </p>
 
 ### Multi-scale encoding and temporal compression
@@ -91,7 +91,7 @@ Thirty-second EEG epochs are divided into non-overlapping five-second sub-epochs
 Parallel depthwise temporal convolutions learn complementary short-, medium-, and long-range EEG patterns. Their outputs are concatenated and progressively compressed by residual dilated blocks, producing a compact representation for sequence modeling.
 
 <p align="center">
-  <img src="Figs/Fig3.pdf" width="95%" alt="Multi-scale CNN temporal feature extraction and compression">
+  <img src="Figs/Fig3.jpg" width="95%" alt="Multi-scale CNN temporal feature extraction and compression">
 </p>
 
 ### Hierarchical sequence learning
@@ -99,7 +99,7 @@ Parallel depthwise temporal convolutions learn complementary short-, medium-, an
 An intra-window BiLSTM captures short-term dynamics within each compressed sub-epoch representation. An inter-window BiLSTM then models contextual dependencies among neighboring windows before classification.
 
 <p align="center">
-  <img src="Figs/Fig4.pdf" width="95%" alt="Hierarchical temporal sequence modeling">
+  <img src="Figs/Fig4.jpg" width="95%" alt="Hierarchical temporal sequence modeling">
 </p>
 
 > **Implementation traceability:** the manuscript diagram includes additive attention. The archived notebook implementation used for the released checkpoint returns the final inter-window BiLSTM state and does not invoke its separately defined attention module. The code preserves that behavior instead of silently changing the trained architecture. See [`IMPLEMENTATION_AUDIT.md`](IMPLEMENTATION_AUDIT.md) for the full notebook-to-package audit.
@@ -118,7 +118,7 @@ The SleepEDF-20 ablation results show the incremental contribution of temporal c
 ## Training behavior and qualitative analysis
 
 <p align="center">
-  <img src="Figs/fig5-NEW.pdf" width="96%" alt="Five-fold cross-validation learning curves">
+  <img src="Figs/fig5-NEW.jpg" width="96%" alt="Five-fold cross-validation learning curves">
 </p>
 
 <p align="center"><em>Mean training and validation accuracy across five folds; shaded regions denote ±1 standard deviation.</em></p>
@@ -133,7 +133,7 @@ The SleepEDF-20 ablation results show the incremental contribution of temporal c
 <details>
 <summary><strong>Physiological segment-importance analysis</strong></summary>
 <br>
-<p align="center"><img src="Figs/Fig8_New.pdf" width="96%" alt="EEG segment importance across sleep stages"></p>
+<p align="center"><img src="Figs/Fig8_New.jpg" width="96%" alt="EEG segment importance across sleep stages"></p>
 <p align="center"><em>Representative segment importance across stages, highlighting alpha, theta, spindle, K-complex, delta, and sawtooth activity.</em></p>
 </details>
 
