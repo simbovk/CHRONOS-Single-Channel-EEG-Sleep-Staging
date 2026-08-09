@@ -27,7 +27,7 @@ CHRONOS is a context-aware framework for automatic sleep staging from a **single
 The repository provides the modular PyTorch implementation used to reproduce the core experimental workflow: memory-efficient data loading, leakage-safe grouped cross-validation, training, checkpointing, block-level evaluation, and paper-aligned metrics.
 
 <p align="center">
-  <img src="figures/Fig1.jpg" width="95%" alt="Overview of the CHRONOS sleep-staging framework">
+  <img src="Figs/Fig1.jpg" width="95%" alt="Overview of the CHRONOS sleep-staging framework">
 </p>
 
 <p align="center"><em>Overview of CHRONOS: context construction, multi-scale temporal encoding, temporal compression, hierarchical sequence modeling, classification, and block-level aggregation.</em></p>
