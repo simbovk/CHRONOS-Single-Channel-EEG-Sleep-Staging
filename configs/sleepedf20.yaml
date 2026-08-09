@@ -1,0 +1,55 @@
+dataset:
+  name: SleepEDF-20
+  data_file: X_EEG_EOG.npy
+  labels_file: y_EEG_EOG.npy
+  block_ids_file: block_ids_EEG_EOG.npy
+  channel_indices: [0]
+  sample_shape: [3, 500, 1]
+  sampling_rate: 100
+  num_classes: 5
+  class_names: [WAKE, N1, N2, N3, REM]
+  mmap_mode: r
+cross_validation:
+  folds: 5
+  shuffle: false
+  seed: 42
+training:
+  batch_size: 128
+  epochs: 100
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+  patience: 30
+  num_workers: 2
+  scheduler_factor: 0.5
+  scheduler_patience: 7
+augmentation:
+  enabled: true
+  p_scale: 0.5
+  scale_range: [0.8, 1.2]
+  p_noise: 0.5
+  noise_alpha: [0.01, 0.05]
+  p_shift: 0.3
+  max_shift_frac: 0.1
+  p_mask: 0.3
+  n_masks: [1, 3]
+  mask_frac: [0.01, 0.05]
+  p_chmix: 0.1
+  chmix_alpha: [0.05, 0.15]
+  p_eog_flip: 0.02
+  eog_index: 1
+model:
+  in_channels: 1
+  num_classes: 5
+  branch_out: 32
+  kernels: [7, 15, 31]
+  mid_channels: [128, 192, 256]
+  dilations: [1, 2, 4]
+  strides: [2, 5, 5]
+  use_se: true
+  lstm_mode: hier
+  lstm_hidden: 128
+  lstm_hidden_intra: 64
+  lstm_hidden_inter: 128
+  fc_hidden: [512, 256]
+  fc_dropout: 0.2
+  fc_use_bn: true

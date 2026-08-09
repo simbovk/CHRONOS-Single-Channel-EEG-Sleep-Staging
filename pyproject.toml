@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "context-aware-sleep-staging"
+version = "0.1.0"
+description = "Reproducible single-channel EEG sleep staging research code"
+requires-python = ">=3.10"
+dependencies = ["numpy", "PyYAML", "scikit-learn", "torch", "tqdm"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
