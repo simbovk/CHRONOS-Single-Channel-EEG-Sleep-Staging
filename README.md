@@ -27,7 +27,7 @@ CHRONOS is a context-aware framework for automatic sleep staging from a **single
 The repository provides the modular PyTorch implementation used to reproduce the core experimental workflow: memory-efficient data loading, leakage-safe grouped cross-validation, training, checkpointing, block-level evaluation, and paper-aligned metrics.
 
 <p align="center">
-  <img src="Figs/Fig1.png" width="95%" alt="Overview of the CHRONOS sleep-staging framework">
+  <img src="figures/Fig1.png" width="95%" alt="Overview of the CHRONOS sleep-staging framework">
 </p>
 
 <p align="center"><em>Overview of CHRONOS: context construction, multi-scale temporal encoding, temporal compression, hierarchical sequence modeling, classification, and block-level aggregation.</em></p>
@@ -71,7 +71,7 @@ All values are percentages except Cohen's κ, which is displayed on the same 0-1
 |  | REM | 85.00 | 85.00 | 88.00 | 96.00 | 98.72 |
 
 <p align="center">
-  <img src="Figs/Fig6_New.png" width="92%" alt="Normalized confusion matrices for SleepEDF-20 and SleepEDF-78">
+  <img src="figures/Fig6_New.png" width="92%" alt="Normalized confusion matrices for SleepEDF-20 and SleepEDF-78">
 </p>
 
 <p align="center"><em>Normalized confusion matrices. Most errors involve physiologically adjacent stages, with N1 remaining the most difficult class.</em></p>
