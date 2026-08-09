@@ -16,7 +16,7 @@
 Faculty of Computer Science and Engineering, Shahid Beheshti University, Tehran, Iran
 
 <!-- Replace the text below with the public arXiv abstract URL when available. -->
-**Paper:** [arXiv link will be added upon preprint release](https://arxiv.org/abs/2512.22976)
+**Paper:** [arXiv link](https://arxiv.org/abs/2512.22976)
 
 </div>
 
