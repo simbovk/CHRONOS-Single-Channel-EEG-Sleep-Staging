@@ -1,6 +1,6 @@
 <div align="center">
 
-# CHRONOS
+# TempoSleep
 
 ### Context-Aware Single-Channel EEG Sleep Staging
 
