@@ -22,15 +22,15 @@ Faculty of Computer Science and Engineering, Shahid Beheshti University, Tehran,
 
 ---
 
-CHRONOS is a context-aware framework for automatic sleep staging from a **single EEG channel**. It combines compact multi-scale feature extraction with temporal compression and hierarchical sequence modeling to capture local waveform structure and longer-range sleep context. Class-weighted learning and EEG augmentation address class imbalance, with particular emphasis on the challenging N1 stage.
+TempoSleep is a context-aware framework for automatic sleep staging from a **single EEG channel**. It combines compact multi-scale feature extraction with temporal compression and hierarchical sequence modeling to capture local waveform structure and longer-range sleep context. Class-weighted learning and EEG augmentation address class imbalance, with particular emphasis on the challenging N1 stage.
 
 The repository provides the modular PyTorch implementation used to reproduce the core experimental workflow: memory-efficient data loading, leakage-safe grouped cross-validation, training, checkpointing, block-level evaluation, and paper-aligned metrics.
 
 <p align="center">
-  <img src="Figs/Fig1.jpg" width="95%" alt="Overview of the CHRONOS sleep-staging framework">
+  <img src="Figs/Fig1.jpg" width="95%" alt="Overview of the TempoSleep sleep-staging framework">
 </p>
 
-<p align="center"><em>Overview of CHRONOS: context construction, multi-scale temporal encoding, temporal compression, hierarchical sequence modeling, classification, and block-level aggregation.</em></p>
+<p align="center"><em>Overview of TempoSleep: context construction, multi-scale temporal encoding, temporal compression, hierarchical sequence modeling, classification, and block-level aggregation.</em></p>
 
 ## Highlights
 
@@ -126,7 +126,7 @@ The SleepEDF-20 ablation results show the incremental contribution of temporal c
 <details>
 <summary><strong>Expert and predicted hypnograms</strong></summary>
 <br>
-<p align="center"><img src="Figs/Fig7.png" width="94%" alt="Expert and CHRONOS hypnograms over an overnight recording"></p>
+<p align="center"><img src="Figs/Fig7.png" width="94%" alt="Expert and TempoSleep hypnograms over an overnight recording"></p>
 <p align="center"><em>Expert annotations and model predictions over an eight-hour SleepEDF-20 recording.</em></p>
 </details>
 
@@ -169,8 +169,8 @@ The SleepEDF-20 ablation results show the incremental contribution of temporal c
 ## Installation
 
 ```bash
-git clone https://github.com/simbovk/CHRONOS-Single-Channel-EEG-Sleep-Staging.git
-cd CHRONOS-Single-Channel-EEG-Sleep-Staging
+git clone https://github.com/simbovk/TempoSleep.git
+cd TempoSleep
 
 python -m venv .venv
 source .venv/bin/activate       # Windows: .venv\Scripts\activate
@@ -276,15 +276,15 @@ The test suite verifies:
 
 ## Citation
 
-If you use this repository, please cite the accompanying paper. BibTeX will be updated when the arXiv identifier is available:
+If you use this repository, please cite the accompanying paper. BibTeX will may be updated, but for now:
 
 ```bibtex
-@article{vakili2026chronos,
+@article{vakili2026temposleep,
   title   = {A Context-Aware Temporal Modeling through Unified Multi-Scale Temporal Encoding and Hierarchical Sequence Learning for Single-Channel EEG Sleep Staging},
   author  = {Vakili, Amirali and Jahanshiri, Salar and Salimi-Badr, Armin},
   year    = {2026},
   note    = {Preprint; arXiv identifier forthcoming},
-  url     = {https://github.com/simbovk/CHRONOS-Single-Channel-EEG-Sleep-Staging}
+  url     = {https://github.com/simbovk/TempoSleep}
 }
 ```
 
@@ -302,6 +302,6 @@ We thank the maintainers and contributors of Sleep-EDF Expanded and PhysioNet. T
 
 <div align="center">
 
-If CHRONOS supports your research, please cite the paper and consider starring the repository.
+If TempoSleep supports your research, please cite the paper and consider starring the repository.
 
 </div>
